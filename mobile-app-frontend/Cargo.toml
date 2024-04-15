@@ -1,0 +1,47 @@
+[package]
+name = "vw-app"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { version = "0.4.24", features = ["serde"] }
+js-sys = "0.3.63"
+parse-display = "0.8.0"
+pub_this = "0.1.0"
+reqwest = { version = "0.11.18", features = ["serde_json", "json"] }
+serde = { version = "1.0.163", features = ["derive"] }
+wasm-bindgen = "0.2.86"
+web-sys = { version = "0.3.63", features = ["Storage", "Window"] }
+yew = { version = "0.20", features = ["csr"] }
+yew-hooks = "0.2.0"
+yew-router = "0.17.0"
+yewdux = { version = "0.9.2" }
+gloo-timers = { version = "0.2.6", features = ["futures"] }
+serde_repr = "0.1.12"
+gloo = "0.8.1"
+tap = "1.0.1"
+one-of = "0.2.3"
+wasm-log = "0.3.1"
+log = "0.4.19"
+log-derive = "0.4.1"
+indextreemap = "0.1.23"
+console_error_panic_hook = "0.1.7"
+enclose = "1.1.8"
+closure = "0.3.0"
+capture-it = "0.4.3"
+dotenv_codegen = "0.15.0"
+serde_json = "1.0.108"
+
+[profile.release]
+# less code to include into binary
+panic = 'abort'
+# optimization over all codebase ( better optimization, slower build )
+codegen-units = 1
+# optimization for size ( more aggressive )
+opt-level = 'z'
+# optimization for size
+# opt-level = 's'
+# link time optimization using using whole-program analysis
+lto = true

@@ -1,0 +1,56 @@
+use std::ops::Deref;
+
+use yew::{html, function_component, Html, Properties, use_state, UseStateHandle, use_effect_with_deps, use_effect};
+use yew_hooks::{use_async, use_effect_once};
+use yew_router::prelude::Link;
+use yewdux::{prelude::use_store, log::debug};
+
+use crate::{models::*, State, api, router::Route};
+
+enum StateEnum<T, E> {
+	Loading,
+	Error(E),
+	Success(T),
+}
+
+macro_rules! async_action {
+	($async_action: expr, $success: expr, $error: expr) => {
+		{
+			let change = use_state(|| false);
+			let async_action = use_async(async move $async_action);
+
+			use_effect_with_deps(move |(error, data)| {
+				change.set(true);
+			}, async_action.error.clone(), async_action.data.clone());
+
+			if change {
+				if let Some(error) = &async_action.error {
+					change.set(false);
+					$error
+				}
+				if let Some(data) = async_action.data {
+					change.set(false);
+					$success
+				}
+			}
+
+			async_action
+		}
+	};
+}
+
+#[function_component]
+pub fn TestMacro() -> Html {
+	async_action!({
+		api::finish_operation(&clonned_state.user_session_id.as_ref().unwrap(), &or.unwrap()).await.or_else(|e| Err(e.error))
+	}, {
+
+	}, {
+
+	});
+	html! {
+		<div class="section py-5">
+		<h1 class="title">{"TestMacro"}</h1>
+		</div>
+	}
+}

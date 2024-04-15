@@ -1,0 +1,15 @@
+{
+  "dependencies": {},
+  "name": "avito_extrabot",
+  "module": "tests.ts",
+  "type": "module",
+  "scripts": {
+    "avito": "bun avito.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

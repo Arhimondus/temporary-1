@@ -1,0 +1,6 @@
+/target
+/dist
+/build
+.server-password
+_
+.env

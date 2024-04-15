@@ -1,0 +1,1 @@
+~/.cargo/bin/trunk serve --open --address 0.0.0.0

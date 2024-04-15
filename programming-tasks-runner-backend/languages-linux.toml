@@ -1,0 +1,81 @@
+[[languages]]
+id = "cpp"
+idol = "aika"
+file = "%idol.cpp"
+init = ["gcc", "x c -std=c2x -O2 -fno-strict-aliasing -march=native -Wl,-s,-static,-lm,--stack=67108864 -o /var/app/%idol /var/app/%idol.cpp"]
+run = ["./%idol"]
+output = "%idol"
+
+[[languages]]
+id = "kotlin"
+idol = "grimes"
+file = "%idol.kt"
+init = ["kotlinc", "%idol.kt -d %idol.jar"]
+run = ["java", "-jar %idol.jar"]
+output = "%idol.jar"
+
+[[languages]]
+id = "csharp"
+idol = "sancho"
+file = "%idol.cs"
+init = ["dotnet", "publish -c Release"]
+run = ["./bin/Release/net5.0/lin-x64/publish/%idol"]
+output = "%idol"
+
+[[languages]]
+id = "rust"
+idol = "eilish"
+file = "%idol.cs"
+init = ["rustc", "-O %idol.rs"]
+run = ["./%idol"]
+output = "%idol"
+
+[[languages]]
+id = "javascript"
+idol = "seroga"
+file = "%idol.js"
+run = ["cmd", "/C deno run --no-remote ./%idol.js"]
+
+[[languages]]
+id = "typescript"
+idol = "marina"
+file = "%idol.ts"
+run = ["cmd", "/C deno run --no-remote ./%idol.ts"]
+
+[[languages]]
+id = "brainfuck"
+idol = "drfast"
+file = "%idol.bf"
+run = ["bf2run", "%idol.bf"]
+
+[[languages]]
+id = "dlang"
+idol = "lion"
+file = "%idol.js"
+init = ["ldc2", "-O %idol.d"]
+run = ["./%idol"]
+output = "%idol"
+
+[[languages]]
+id = "vlang"
+idol = "evgeny"
+file = "%idol.v"
+init = ["v", "%idol.v"]
+run = ["./%idol"]
+output = "%idol"
+
+[[languages]]
+id = "java"
+idol = "lena"
+file = "%idol.v"
+init = ["javac", "Main.java"]
+run = ["java -classpath . Main"]
+output = "%idol.class"
+
+[[languages]]
+id = "crystal"
+idol = "kira"
+file = "%idol.cr"
+init = ["crystal", "build %idol.cr --release"]
+run = ["./%idol"]
+output = "%idol.class"

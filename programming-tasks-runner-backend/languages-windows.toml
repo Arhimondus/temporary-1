@@ -1,0 +1,73 @@
+[[languages]]
+id = "cpp"
+idol = "aika"
+file = "%idol.cpp"
+init = ["cmd", "/C call vcvarsx86_amd64.bat && cl /TP /MT /EHsc /GL /O2 /W3 /Za /std:c++latest %idol.cpp"]
+run = ["./%idol.exe"]
+output = "%idol.exe"
+
+[[languages]]
+id = "kotlin"
+idol = "grimes"
+file = "%idol.kt"
+init = ["kotlinc", "%idol.kt -d %idol.jar"]
+run = ["java", "-jar %idol.jar"]
+output = "%idol.jar"
+
+[[languages]]
+id = "csharp"
+idol = "sancho"
+file = "%idol.cs"
+init = ["dotnet", "publish -c Release"]
+run = ["./bin/Release/net5.0/win-x64/publish/%idol.exe"]
+output = "%idol.exe"
+
+[[languages]]
+id = "rust"
+idol = "eilish"
+file = "%idol.cs"
+init = ["rustc", "-O %idol.rs"]
+run = ["%idol.exe"]
+output = "%idol.exe"
+
+[[languages]]
+id = "javascript"
+idol = "seroga"
+file = "%idol.js"
+run = ["cmd", "/C deno run --no-remote ./%idol.js"]
+
+[[languages]]
+id = "typescript"
+idol = "marina"
+file = "%idol.ts"
+run = ["cmd", "/C deno run --no-remote ./%idol.ts"]
+
+[[languages]]
+id = "brainfuck"
+idol = "drfast"
+file = "%idol.bf"
+run = ["bf2run", "%idol.bf"]
+
+[[languages]]
+id = "dlang"
+idol = "lion"
+file = "%idol.d"
+init = ["ldc2", "-O %idol.d"]
+run = ["%idol.exe"]
+output = "%idol.exe"
+
+[[languages]]
+id = "vlang"
+idol = "evgeny"
+file = "%idol.v"
+init = ["v", "%idol.v"]
+run = ["%idol.exe"]
+output = "%idol.exe"
+
+[[languages]]
+id = "java"
+idol = "lena"
+file = "%idol.v"
+init = ["javac", "%idol.java"]
+run = ["java -classpath . %idol"]
+output = "%idol.class"

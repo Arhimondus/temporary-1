@@ -1,0 +1,14 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://0.0.0.0:8080",
+      "localStorage": [
+        {
+          "name": "state",
+          "value": "{\"user_session_id\":\"c5908975-034f-4a82-b138-84d7d08df4f5\",\"user\":{\"id\":41,\"phone\":\"+79774969653\",\"name\":\"Романов Артеметрикс Александрович\",\"specialization_name\":\"Разнорабочий\",\"specialization_id\":1,\"intern\":false},\"taken_tasks_count\":0,\"new_tasks_count\":0,\"new_tasks\":null,\"taken_tasks\":null,\"finished_tasks\":null,\"active_task\":null}"
+        }
+      ]
+    }
+  ]
+}
